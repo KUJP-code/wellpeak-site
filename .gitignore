@@ -1,9 +1,21 @@
+# Ignore WordPress core
 /wp-admin/
 /wp-includes/
+
 /wp-content/uploads/
+wp-content/cache/
+
 wp-config.php
-*.log
-*.sql
+.env
+*.env
+local.env
+
+.DS_Store
+Thumbs.db
+
 node_modules/
 vendor/
-.env
+
+*.log
+*.sql
+*.sqlite
