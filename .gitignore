@@ -1,21 +1,52 @@
-# Ignore WordPress core
+
+# Usual core wp files during local dev
+
 /wp-admin/
 /wp-includes/
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+# only keep theme-wellpeak
+/wp-content/*
+!/wp-content/themes/
+
+
+/wp-content/themes/*
+!/wp-content/themes/wellpeak-site/
+
+
+
+# local stuff
 
 /wp-content/uploads/
 wp-content/cache/
+wp-content/upgrade/
+wp-content/backups/
+wp-content/debug.log
 
-wp-config.php
+# envs if used
 .env
-*.env
-local.env
-
+.env.local
 .DS_Store
 Thumbs.db
 
+# in case of node stuff durign testing
 node_modules/
 vendor/
-
+composer.lock
+package-lock.json
 *.log
-*.sql
-*.sqlite
