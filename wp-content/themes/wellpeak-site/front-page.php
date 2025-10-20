@@ -1,4 +1,4 @@
-// Doing things as template parts is probably smart so we can work on them separately.
+<!--Doing things as template parts is probably smart so we can work on them separately.-->
 
 <?php get_header(); ?>
 
