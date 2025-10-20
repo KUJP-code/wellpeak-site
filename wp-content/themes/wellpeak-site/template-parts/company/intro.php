@@ -1,6 +1,37 @@
-add_action('wp_enqueue_scripts', function () {
-  $ver = wp_get_theme()->get('Version');
-  if (is_page_template('page-company.php')) {
-    wp_enqueue_style('wellpeak-company', get_stylesheet_directory_uri().'/css/company.css', [], $ver);
-  }
-});
+<?php
+/**
+ * Template Part: Intro Section
+ * Description: Introduction Area
+ */
+?>
+ <section class="company-intro">
+   <div class="container">
+     <h2>会社概要 / Company Overview</h2>
+     <p>
+         春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる
+         。夏は夜。
+         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白
+         くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
+         月の頃はさらな
+         り。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかり
+         て、紫だちたる雲の細くたなびきたる。夏は夜。
+         月の頃はさらなり。闇もなほ。蛍の多く飛び
+         違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くた
+         なびきたる。夏は夜。
+         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。
+         やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
+         月の
+         頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。
+         春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる
+         。夏は夜。
+         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白
+         くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
+         月の頃はさらな
+         り。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかり
+         て、紫だちたる雲の細くたなびきたる。夏は夜。
+         月の頃はさらなり。闇もなほ。蛍の多く飛び
+         違ひたる。
+     </p>
+     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/company_intro.jpg" alt="Company Image" style="max-width:100%;height:auto;">
+   </div>
+ </section>

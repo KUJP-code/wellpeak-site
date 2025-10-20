@@ -12,3 +12,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer();
+// set route as  company in wordpress for consistency.
