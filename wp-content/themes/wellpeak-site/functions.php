@@ -5,7 +5,7 @@ if (!defined("ABSPATH")) {
 
 /**
  * TODO: This is slop that I imported as I dont use wordpress or PHP usually and I need to get this up and running, will curate this later.
- * Some of this is good to know though, the cache busting method for example stops some issues I noticed on the KU site, prevents browsers 
+ * Some of this is good to know though, the cache busting method for example stops some issues I noticed on the KU site, prevents browsers
  * from serving cached versions after updates.
  */
 add_action("after_setup_theme", function () {
@@ -30,48 +30,57 @@ add_action("after_setup_theme", function () {
     add_image_size("card", 640, 360, true);
 });
 
-add_action("wp_enqueue_scripts", function () {
-    $theme_uri = get_stylesheet_directory_uri();
-    $theme_path = get_stylesheet_directory();
+add_action(
+    "wp_enqueue_scripts",
+    function () {
+        $dir = get_stylesheet_directory();
+        $uri = get_stylesheet_directory_uri();
 
-    // Cache-busting helper: filemtime if file exists, else theme version, good for having changes appear.
-    $ver = function (string $rel) use ($theme_path) {
-        $path = $theme_path . "/" . ltrim($rel, "/");
-        return file_exists($path)
-            ? filemtime($path)
-            : wp_get_theme()->get("Version");
-    };
+        // cache-busting: mtime if present, else theme version
+        $ver = function ($rel) use ($dir) {
+            $path = $dir . "/" . ltrim($rel, "/");
+            return file_exists($path)
+                ? filemtime($path)
+                : wp_get_theme()->get("Version");
+        };
 
-    // global css import
-    if (file_exists($theme_path . "/css/style.css")) {
-        wp_enqueue_style(
+        $enqueue_if_exists = function (
+            $handle,
+            $rel,
+            $deps = [],
+            $in_footer = false,
+        ) use ($dir, $uri, $ver) {
+            $path = $dir . "/" . ltrim($rel, "/");
+            if (!file_exists($path)) {
+                return;
+            }
+            $url = $uri . "/" . ltrim($rel, "/");
+            if (str_ends_with($rel, ".css")) {
+                wp_enqueue_style($handle, $url, $deps, $ver($rel));
+            } else {
+                wp_enqueue_script($handle, $url, $deps, $ver($rel), $in_footer);
+            }
+        };
+
+        // global styles
+        $enqueue_if_exists("wellpeak-style", "css/style.css");
+
+        $enqueue_if_exists("wellpeak-header", "css/header.css", [
             "wellpeak-style",
-            $theme_uri . "/css/style.css",
-            [],
-            $ver("css/style.css"),
-        );
-    }
+        ]);
+        $enqueue_if_exists("wellpeak-footer", "css/footer.css", [
+            "wellpeak-style",
+        ]);
 
-    // sheet imports - apparently this is a wordpress convention rather than declaring it at the top of a page.
-    if (
-        is_page_template("page-company.php") &&
-        file_exists($theme_path . "/css/company.css")
-    ) {
-        wp_enqueue_style(
-            "wellpeak-company",
-            $theme_uri . "/css/company.css",
-            ["wellpeak-style"],
-            $ver("css/company.css"),
-        );
-    }
+        // page specific styles
+        if (is_page_template("page-company.php")) {
+            $enqueue_if_exists("wellpeak-company", "css/company.css", [
+                "wellpeak-style",
+            ]);
+        }
 
-    if (file_exists($theme_path . "/js/main.js")) {
-        wp_enqueue_script(
-            "wellpeak-main",
-            $theme_uri . "/js/main.js",
-            [],
-            $ver("js/main.js"),
-            true,
-        );
-    }
-});
+        // load js in footer rather than head to prevent early parsing
+        $enqueue_if_exists("wellpeak-main", "js/main.js", [], true);
+    },
+    10,
+);
