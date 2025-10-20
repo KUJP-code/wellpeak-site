@@ -14,6 +14,7 @@ All WordPress core files, media uploads, and database content are **not** versio
    - Activate **Wellpeak Site** under *Appearance → Themes*.
    - Activate **Wellpeak Forms** under *Plugins*.
 4. Add content (pages, posts, media) directly via WP Admin.
+5. For a decent developer experience, make a local site with LocalWP and link your repo's wp-content to that directory for hot reloading.
 
 ## Workflow
 
