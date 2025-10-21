@@ -1,0 +1,15 @@
+$wellpeak-yellow: #f5d43c;
+$wellpeak-brown: #70574b;
+$common-spacing: 2rem;
+$common-radius: 1.5rem;
+
+/* don’t try to reassign Sass vars inside media queries.*/
+$common-spacing: 2rem;
+:root {
+    --common-spacing: #{$common-spacing};
+}
+@media (max-width: 575.98px) {
+    :root {
+        --common-spacing: 1rem;
+    }
+}
