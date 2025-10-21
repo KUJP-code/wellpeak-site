@@ -23,64 +23,48 @@ add_action("after_setup_theme", function () {
 
     register_nav_menus([
         "primary" => __("Primary Menu", "wellpeak-site"),
-        "footer" => __("Footer Menu", "wellpeak-site"),
+        "footer-menu" => __("Footer Menu", "wellpeak-site"),
     ]);
 
     // Example card size for news thumbnails
     add_image_size("card", 640, 360, true);
 });
-
 add_action(
     "wp_enqueue_scripts",
     function () {
         $dir = get_stylesheet_directory();
         $uri = get_stylesheet_directory_uri();
 
-        // cache-busting: mtime if present, else theme version
-        $ver = function ($rel) use ($dir) {
-            $path = $dir . "/" . ltrim($rel, "/");
-            return file_exists($path)
-                ? filemtime($path)
-                : wp_get_theme()->get("Version");
-        };
-
-        $enqueue_if_exists = function (
-            $handle,
-            $rel,
-            $deps = [],
-            $in_footer = false,
-        ) use ($dir, $uri, $ver) {
-            $path = $dir . "/" . ltrim($rel, "/");
-            if (!file_exists($path)) {
-                return;
-            }
-            $url = $uri . "/" . ltrim($rel, "/");
-            if (str_ends_with($rel, ".css")) {
-                wp_enqueue_style($handle, $url, $deps, $ver($rel));
-            } else {
-                wp_enqueue_script($handle, $url, $deps, $ver($rel), $in_footer);
-            }
-        };
-
-        // global styles
-        $enqueue_if_exists("wellpeak-style", "css/style.css");
-
-        $enqueue_if_exists("wellpeak-header", "css/header.css", [
-            "wellpeak-style",
-        ]);
-        $enqueue_if_exists("wellpeak-footer", "css/footer.css", [
-            "wellpeak-style",
-        ]);
-
-        // page specific styles
-        if (is_page_template("page-company.php")) {
-            $enqueue_if_exists("wellpeak-company", "css/company.css", [
-                "wellpeak-style",
-            ]);
+        if (!is_dir("$dir/css")) {
+            wp_mkdir_p("$dir/css");
+        }
+        if (!file_exists("$dir/css/main.css")) {
+            file_put_contents(
+                "$dir/css/main.css",
+                "/* placeholder; WP-SCSS will overwrite */\n",
+            );
         }
 
-        // load js in footer rather than head to prevent early parsing
-        $enqueue_if_exists("wellpeak-main", "js/main.js", [], true);
+        $ver = file_exists("$dir/css/main.css")
+            ? filemtime("$dir/css/main.css")
+            : wp_get_theme()->get("Version");
+
+        wp_enqueue_style(
+            "wellpeak-main-styles",
+            $uri . "/css/main.css",
+
+            $ver,
+        );
+
+        if (file_exists("$dir/js/main.js")) {
+            wp_enqueue_script(
+                "wellpeak-main",
+                $uri . "/js/main.js",
+                [],
+                filemtime("$dir/js/main.js"),
+                true,
+            );
+        }
     },
     10,
 );
