@@ -11,31 +11,24 @@
   <div class="container bar">
     <a class="brand" href="<?php echo esc_url(home_url("/")); ?>">
       <img src="<?php echo esc_url(
-          get_stylesheet_directory_uri() . "/images/logo.svg",
+          get_stylesheet_directory_uri() . "/images/nav-logo.svg",
       ); ?>" alt="Wellpeak">
-      <span>Wellpeak</span>
     </a>
 
-    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
 
     <nav id="primary-nav" class="nav" role="navigation">
-      <ul>
-        <li><a href="<?php echo esc_url(
-            home_url("/company/"),
-        ); ?>">会社概要 </a></li>
-        <li><a href="<?php echo esc_url(
-            home_url("/curriculum/"),
-        ); ?>">カリキュラム</a></li>
-        <li><a href="<?php echo esc_url(
-            home_url("/course/"),
-        ); ?>">コース</a></li>
-        <li><a href="<?php echo esc_url(
-            home_url("/setsumeikai-yoyaku/"),
-        ); ?>">説明会予約</a></li>
-        <li><a href="<?php echo esc_url(
-            home_url("/toiawase/"),
-        ); ?>">お問い合わせ</a></li>
-      </ul>
+        <div class="nav-inner">
+      <?php wp_nav_menu([
+          "theme_location" => "primary",
+          "container" => false,
+          "menu_class" => "menu",
+          "depth" => 2,
+      ]); ?>
+      </div>
     </nav>
+
   </div>
 </header>
