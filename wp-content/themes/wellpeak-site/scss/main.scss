@@ -1,7 +1,16 @@
 @import "variables";
 @import "footer";
+@import "header";
 
 /*  something */
-body {
-    outline: 3px solid magenta;
+.cta-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(
+        closest-corner circle at 25% 15%,
+        #9d7d59 0%,
+        #70574b 125%
+    );
 }
