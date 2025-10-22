@@ -3,9 +3,8 @@
 .site-header {
     background-color: white;
     color: $wellpeak-brown;
-    border-bottom: 0.2rem solid $wellpeak-yellow;
-
     .bar {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -13,6 +12,19 @@
         margin: auto;
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
+
+        border-bottom: none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0.2rem;
+            background: $wellpeak-yellow;
+            border-radius: 1rem;
+        }
     }
 
     .brand {
@@ -137,7 +149,6 @@
                     opacity 0.25s ease,
                     background 0.25s ease;
             }
-
             .hamburger::before,
             .hamburger::after {
                 content: "";
@@ -152,7 +163,6 @@
                     opacity 0.25s ease,
                     background 0.25s ease;
             }
-
             .hamburger::before {
                 top: -6px;
             }
@@ -163,7 +173,6 @@
             &[aria-expanded="true"] {
                 background: white;
                 border-color: $wellpeak-brown;
-
                 .hamburger {
                     background: transparent;
                 }
@@ -171,7 +180,6 @@
                 .hamburger::after {
                     background: $wellpeak-brown;
                 }
-
                 .hamburger::before {
                     transform: translateY(6px) rotate(45deg);
                 }
