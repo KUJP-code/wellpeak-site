@@ -1,16 +1,70 @@
 @import "variables";
-@import "footer";
 @import "header";
+@import "footer";
 
-/*  something */
+/* ==========
+   GLOBAL LAYOUT
+   ========== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+    color: $wellpeak-brown;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+}
+
 .cta-wrapper {
     width: 100%;
+    max-width: 1200px;
     height: fit-content;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    overflow: hidden;
     background: radial-gradient(
         closest-corner circle at 25% 15%,
         #9d7d59 0%,
         #70574b 125%
     );
+    color: white;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+    margin: 2rem auto;
+}
+/* global layout */
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.site-header .bar,
+.footer-inner {
+    @extend .container;
+}
+.fullwidth {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
