@@ -1,4 +1,4 @@
-<section id="footer" class="footer fullwidth">
+<section id="footer" class="footer">
 
 <div class="footer-inner">
 
