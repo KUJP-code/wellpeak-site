@@ -153,7 +153,7 @@
                     color: $wellpeak-brown;
                     border: 0.15rem solid white;
                     border-radius: 2rem;
-                    font-size: 0.9rem;
+                    font-size: $font-base;
                     text-align: center;
                     text-decoration: none;
                     transition: all 0.25s ease-in-out;
@@ -204,7 +204,7 @@
                                 height: fit-content;
                                 border-style: none;
                                 color: white;
-                                font-size: 0.9rem;
+                                font-size: $font-base;
                                 transition: ease-in-out 0.2s;
 
                                 &:hover {
