@@ -1,14 +1,21 @@
 @import "variables";
 
 .site-header {
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    clip-path: inset(0 0 -10px 0);
     background-color: white;
     color: $wellpeak-brown;
+    position: sticky;
     .bar {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: calc(100% - 4.5rem);
+        width: calc(100% - 4rem);
         margin: auto;
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
@@ -98,8 +105,6 @@
             }
         }
     }
-
-    margin-bottom: 1.5rem;
 
     @media (max-width: 991.98px) {
         .bar {

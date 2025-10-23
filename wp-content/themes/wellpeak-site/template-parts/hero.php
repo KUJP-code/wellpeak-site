@@ -1,31 +1,23 @@
- <section class="company-intro">
-   <div class="container">
-     <h2>会社概要 / Company Overview</h2>
-     <p>
-         春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる
-         。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白
-         くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらな
-         り。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかり
-         て、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び
-         違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くた
-         なびきたる。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。
-         やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の
-         頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。
-         春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる
-         。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白
-         くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらな
-         り。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかり
-         て、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び
-         違ひたる。
-     </p>
-     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/company_intro.jpg" alt="Company Image" style="max-width:100%;height:auto;">
-   </div>
- </section>
+<section class="hero-full">
+  <div class="container">
+    <div class="hero-message" aria-label="スローガン">人間力を育てる</div>
+    <?php echo do_shortcode('[smartslider3 slider="2"]'); ?>
+
+  </div>
+</section>
+<section class="hero-sub">
+  <div class="container">
+    <div class="hero-sub__images">
+      <img
+        src="<?php echo get_template_directory_uri(); ?>/images/subheader-image-1.svg"
+        alt="Subheader visual 1"
+        class="hero-sub__image"
+      />
+      <img
+        src="<?php echo get_template_directory_uri(); ?>/images/subheader-image-2.svg"
+        alt="Subheader visual 2"
+        class="hero-sub__image"
+      />
+    </div>
+  </div>
+</section>
