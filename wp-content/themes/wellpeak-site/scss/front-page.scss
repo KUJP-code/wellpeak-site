@@ -93,7 +93,29 @@
         flex-direction: column;
     }
 }
+.about-course {
+    position: relative;
+    overflow: visible;
+}
+/* rainbow svg */
+.about-course .about-text {
+    position: relative;
+    z-index: 1;
+}
 
+.about-course .about-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15vw;
+    width: 60vw;
+    height: 100%;
+    background: url("../images/background-rainbow.svg") no-repeat left center;
+    background-size: contain;
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none;
+}
 /*  points list */
 .points-content {
     flex: 1;
