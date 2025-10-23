@@ -13,6 +13,7 @@
 }
 
 #footer {
+    font-weight: 700;
     padding-top: var(--common-spacing);
     background-color: $wellpeak-brown;
 
@@ -49,7 +50,7 @@
                     .sns-contents {
                         height: auto;
                         width: 25%;
-                        padding: 0.2rem;
+                        padding: 0.5rem;
                         a {
                             display: inline-flex;
                             align-items: center;
@@ -57,7 +58,7 @@
                         }
 
                         img {
-                            width: 1.3rem !important;
+                            width: 2.3rem !important;
                             height: auto;
                             opacity: 0.85;
                             transition:
@@ -265,7 +266,8 @@
 
                 .footer-lower-link-button,
                 .footer-lower-link {
-                    font-size: 0.8rem;
+                    font-size: $font-base;
+                    font-weight: 400;
                     padding: 0.15rem;
                     margin: auto;
                 }
@@ -347,7 +349,7 @@
                         .footer-lower-link-button {
                             width: 66%;
                             text-align: center;
-                            font-size: 1rem;
+                            font-size: $font-sm;
                         }
                     }
                 }
@@ -371,8 +373,8 @@
 
             img {
                 width: 100%;
-                max-width: 230px;
-                max-height: 68px;
+                max-width: 350px;
+                max-height: 150px;
             }
         }
     }

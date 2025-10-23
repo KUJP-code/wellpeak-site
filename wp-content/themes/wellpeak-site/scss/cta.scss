@@ -1,5 +1,8 @@
 @import "variables";
-
+.cta {
+    margin-top: $common-spacing;
+    margin-bottom: $common-spacing;
+}
 .cta-wrapper {
     position: relative;
     width: 100%;

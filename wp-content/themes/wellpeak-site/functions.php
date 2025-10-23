@@ -3,7 +3,36 @@ if (!defined("ABSPATH")) {
     exit();
 }
 
-/** Theme setup */
+add_action("init", function () {
+    register_post_type("news", [
+        "label" => "ニュース",
+        "labels" => [
+            "name" => "ニュース",
+            "singular_name" => "ニュース",
+            "add_new" => "新規追加",
+            "add_new_item" => "ニュースを追加",
+            "edit_item" => "ニュースを編集",
+            "new_item" => "新しいニュース",
+            "view_item" => "ニュースを表示",
+            "search_items" => "ニュースを検索",
+        ],
+        "public" => true,
+        "menu_icon" => "dashicons-megaphone",
+        "supports" => [
+            "title",
+            "editor",
+            "thumbnail",
+            "excerpt",
+            "revisions",
+            "author",
+        ],
+        "show_in_rest" => true,
+        "has_archive" => false,
+        "rewrite" => ["slug" => "news"],
+    ]);
+    add_image_size("news_card", 640, 360, true);
+});
+
 add_action("after_setup_theme", function () {
     add_theme_support("title-tag");
     add_theme_support("post-thumbnails");
@@ -23,13 +52,12 @@ add_action("after_setup_theme", function () {
     add_image_size("card", 640, 360, true);
 });
 
-/** Optional: resource hints for Google Fonts speed */
 add_filter(
     "wp_resource_hints",
     function ($urls, $relation_type) {
         if ("preconnect" === $relation_type) {
             $urls[] = "https://fonts.googleapis.com";
-            $urls[] = "https://fonts.gstatic.com"; // gstatic needs crossorigin
+            $urls[] = "https://fonts.gstatic.com";
         }
         return $urls;
     },
@@ -37,7 +65,6 @@ add_filter(
     2,
 );
 
-/** Enqueue Google Fonts */
 function wellpeak_enqueue_fonts()
 {
     wp_enqueue_style(
@@ -47,9 +74,8 @@ function wellpeak_enqueue_fonts()
         null,
     );
 }
-add_action("wp_enqueue_scripts", "wellpeak_enqueue_fonts", 5); // early
+add_action("wp_enqueue_scripts", "wellpeak_enqueue_fonts", 5);
 
-/** Styles & scripts */
 add_action("wp_enqueue_scripts", function () {
     $dir = get_stylesheet_directory();
     $uri = get_stylesheet_directory_uri();
@@ -61,10 +87,7 @@ add_action("wp_enqueue_scripts", function () {
         !file_exists("$dir/css/main.css") &&
         is_writable(dirname("$dir/css/main.css"))
     ) {
-        file_put_contents(
-            "$dir/css/main.css",
-            "/* placeholder; WP-SCSS will overwrite */\n",
-        );
+        file_put_contents("$dir/css/main.css", "/* placeholder */\n");
     }
 
     $css_ver = file_exists("$dir/css/main.css")
@@ -76,13 +99,32 @@ add_action("wp_enqueue_scripts", function () {
     $header_js_ver = file_exists("$dir/js/header.js")
         ? filemtime("$dir/js/header.js")
         : null;
+    $faq_js_ver = file_exists("$dir/js/faq.js")
+        ? filemtime("$dir/js/faq.js")
+        : null;
+    $news_js_ver = file_exists("$dir/js/news-slider.js")
+        ? filemtime("$dir/js/news-slider.js")
+        : null;
 
-    // Note: depend on fonts so order is guaranteed
     wp_enqueue_style(
         "wellpeak-main-styles",
         $uri . "/css/main.css",
         ["wellpeak-fonts"],
         $css_ver,
+    );
+
+    wp_enqueue_style(
+        "swiper",
+        "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+        [],
+        null,
+    );
+    wp_enqueue_script(
+        "swiper",
+        "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+        [],
+        null,
+        true,
     );
 
     if ($header_js_ver) {
@@ -101,6 +143,24 @@ add_action("wp_enqueue_scripts", function () {
             $uri . "/js/main.js",
             [],
             $main_js_ver,
+            true,
+        );
+    }
+    if ($faq_js_ver) {
+        wp_enqueue_script(
+            "wellpeak-faq",
+            $uri . "/js/faq.js",
+            [],
+            $faq_js_ver,
+            true,
+        );
+    }
+    if ($news_js_ver) {
+        wp_enqueue_script(
+            "wellpeak-news-slider",
+            $uri . "/js/news-slider.js",
+            ["swiper"],
+            $news_js_ver,
             true,
         );
     }
