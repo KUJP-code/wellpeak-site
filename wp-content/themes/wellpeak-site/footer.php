@@ -66,14 +66,6 @@
 </div>
 </div>
 <?php wp_footer(); ?>
-<script>
-new WOW().init();
-</script>
 </body>
-<script>
-  function inquiryLink() {
-    window.location.href = "https://kids-up.jp/inquiry/";
-  }
-</script>
 
 </html>

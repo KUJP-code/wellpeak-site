@@ -14,7 +14,7 @@
 
     <div class="faq-list">
       <?php
-      // array for now, will incorporate wordpress db.
+      // array for now, will incorporate wordpress db maybe?
       $faqs = [
           [
               "q" => "質問1",
