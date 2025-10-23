@@ -1,31 +1,23 @@
- <section class="company-intro">
-   <div class="container">
-     <h2>会社概要 / Company Overview</h2>
-     <p>
-         春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる
-         。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白
-         くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらな
-         り。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかり
-         て、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び
-         違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くた
-         なびきたる。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。
-         やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の
-         頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。
-         春はあけぼの。やうやう白くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる
-         。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白
-         くなりゆく山際、少しあかりて、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらな
-         り。闇もなほ。蛍の多く飛び違ひたる。春はあけぼの。やうやう白くなりゆく山際、少しあかり
-         て、紫だちたる雲の細くたなびきたる。夏は夜。
-         月の頃はさらなり。闇もなほ。蛍の多く飛び
-         違ひたる。
-     </p>
-     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/company_intro.jpg" alt="Company Image" style="max-width:100%;height:auto;">
-   </div>
- </section>
+<section class="cta">
+  <div class="cta-wrapper">
+    <div class="container cta-inner">
+      <div class="cta-content">
+        <h2 class="cta-title">無料体験レッスン</h2>
+        <span class="cta-line"></span>
+        <p class="cta-text">
+          応用言語学博士が監修！最新カリキュラムで<br />
+          英語が聴ける・話せる・楽しめる！
+        </p>
+        <a class="btn btn-primary cta-btn" href="/trial">無料体験に参加する</a>
+      </div>
+    </div>
+
+    <img
+      class="cta-image"
+      src="<?php echo get_template_directory_uri(); ?>/images/cta-background-right.png"
+      alt=""
+      aria-hidden="true"
+      decoding="async"
+    />
+  </div>
+</section>
