@@ -4,9 +4,7 @@
 @import "front-page";
 @import "cta";
 
-/* ==========
-   GLOBAL LAYOUT
-   ========== */
+/* global layouts -- I should have set more global here, might refactor front-page afterwards.*/
 html,
 body {
     margin: 0;
@@ -33,7 +31,6 @@ main {
     box-sizing: border-box;
 }
 
-/* global layout */
 .container {
     width: calc(100% - (var(--page-gutter) * 2));
     margin: 0 auto;
@@ -48,4 +45,65 @@ main {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+/* BANNER STYLING (TOP OF EACH PAGE OUTSIDE OF HOME) */
+.page-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $wellpeak-brown;
+    color: white;
+    height: 30vh;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 99%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 99%, transparent 100%);
+}
+
+.page-banner__text {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-inline: var(--page-gutter) 1rem;
+    text-align: center;
+}
+
+.page-banner__title {
+    position: relative;
+    margin: 0;
+    font-weight: 1000;
+    font-size: $font-heading-lg;
+    color: white;
+    line-height: 1.1;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0.3rem;
+        background: $wellpeak-yellow;
+        border-radius: 999px;
+        margin-top: 0.6rem;
+    }
+}
+
+.page-banner__media {
+    flex: 1;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 55% center;
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .page-banner {
+        height: 20vh;
+    }
+    .page-banner__media {
+        flex: 0 0 60%;
+    }
 }
