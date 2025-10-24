@@ -67,33 +67,43 @@
 }
 
 .cta-btn {
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+    gap: 1em;
     background: transparent;
     border: 3px solid white;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: var(--common-radius);
     font-weight: 900;
-    font-size: $font-base;
+    font-size: $font-lg;
     text-decoration: none;
     transition: all 0.4s ease;
 
     &::after {
-        content: "➜";
-        font-size: 1.2em;
-        margin-left: 0.4em;
-        line-height: 1;
+        content: "";
         display: inline-block;
+        width: 0.9em;
+        height: 0.9em;
+        background: url("../images/arrow-right-white.svg") no-repeat center
+            center;
+        background-size: contain;
+        transition:
+            transform 0.25s ease,
+            filter 0.3s ease;
+        background-position-y: 60%;
         transform: translateY(1px);
-        transition: transform 0.25s ease;
     }
 
     &:hover {
         background: $wellpeak-yellow;
         border-color: $wellpeak-yellow;
         color: $wellpeak-brown;
+
         &::after {
-            transform: translate(0.25em, 1px);
+            transform: translate(4px, 1px);
+            background-image: url("../images/arrow-right-brown.svg");
         }
     }
 }

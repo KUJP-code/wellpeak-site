@@ -102,7 +102,7 @@
     position: relative;
     z-index: 1;
 }
-
+/* A lot of styles just for a rainbow bg */
 .about-course .about-text::before {
     content: "";
     position: absolute;
@@ -112,9 +112,18 @@
     height: 100%;
     background: url("../images/background-rainbow.svg") no-repeat left center;
     background-size: contain;
-    opacity: 0.25;
     z-index: -1;
     pointer-events: none;
+}
+@media (max-width: 768px) {
+    .about-course .about-text::before {
+        left: -30vw;
+        top: -10vw;
+        width: 140vw;
+        height: 100%;
+        background-size: cover;
+        opacity: 0.8;
+    }
 }
 /*  points list */
 .points-content {
@@ -175,30 +184,42 @@
     }
 }
 
-/* CTA button */
+/* see more button */
 .btn-more {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
     margin-top: 1.5rem;
     padding: 0.6rem 1.5rem;
-    font-size: 1.5em;
+    font-size: $font-lg;
     border-radius: var(--common-radius);
     border: 4px solid $wellpeak-brown;
     color: $wellpeak-brown;
     text-decoration: none;
     font-weight: 900;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
+    background: transparent;
+
     &::after {
-        content: "➜";
-        font-size: 1.2em;
-        margin-left: 0.4em;
-        line-height: 1;
+        content: "";
         display: inline-block;
-        transform: translateY(1px);
+        width: 0.9em;
+        height: 0.9em;
+        background: url("../images/arrow-right-brown.svg") no-repeat center
+            center;
+        background-size: contain;
         transition: transform 0.25s ease;
+        transform: translateY(1px);
     }
+
     &:hover {
         background: $wellpeak-brown;
         color: white;
+
+        &::after {
+            transform: translate(4px, 1px);
+            background-image: url("../images/arrow-right-white.svg");
+        }
     }
 }
 
@@ -394,6 +415,7 @@
 }
 
 /* swiper */
+/* many overrides input here to avoid future issues when other styles are added. */
 .news {
     padding: var(--common-spacing) 0;
 
@@ -488,55 +510,75 @@
         display: block;
         object-fit: cover;
     }
+    .news-controls button svg {
+        width: 1.4em;
+        height: 1.4em;
+        transition:
+            transform 0.25s ease,
+            color 0.25s ease;
+    }
+
+    .news-prev svg {
+        transform: scaleX(-1);
+    }
+
     .news-controls {
-        position: relative;
-        z-index: 5;
         display: flex !important;
+        width: 100%;
         justify-content: flex-end;
         align-items: center;
         gap: 0.5rem;
         margin-top: 0.75rem;
     }
 
-    .news-controls .news-prev,
-    .news-controls .news-next {
+    .news-controls button {
         all: unset;
         box-sizing: border-box;
+        display: grid;
+        place-items: center;
         width: 3.5rem;
         height: 3.5rem;
         border-radius: 50%;
         border: 3px solid #cfcfcf;
-        display: grid !important;
-        place-items: center;
-        font-weight: 1000;
-        font-size: 2rem;
-        color: #b5b5b5;
-        line-height: 1;
+        background: #fff;
+        color: $wellpeak-brown;
         cursor: pointer;
         transition:
             border-color 0.25s ease,
             color 0.25s ease,
+            background-color 0.25s ease,
             transform 0.2s ease;
 
         &:hover {
             border-color: $wellpeak-brown;
-            color: $wellpeak-brown;
+            background: $wellpeak-brown;
+            color: #fff;
         }
         &:active {
             transform: scale(0.97);
         }
-        span {
-            display: inline-block;
-            transform: translateY(-1px);
-        }
+    }
+
+    .news-controls button svg {
+        width: 1em;
+        height: 1em;
+        display: block;
+        transition: transform 0.25s ease;
+        pointer-events: none;
+    }
+
+    .news-prev svg {
+        transform: scaleX(-1);
     }
 
     @media (max-width: 575.98px) {
-        .news-controls .news-prev,
-        .news-controls .news-next {
+        .news-controls button {
             width: 2rem;
             height: 2rem;
-            font-size: 1.1rem;
+        }
+        .news-controls button svg {
+            width: 0.8em;
+            height: 0.8em;
         }
     }
 }

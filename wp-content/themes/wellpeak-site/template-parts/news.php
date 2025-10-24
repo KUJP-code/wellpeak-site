@@ -48,8 +48,19 @@
       </div>
 
       <div class="news-controls">
-        <button type="button" class="news-prev" aria-label="前へ"><span>&lt;</span></button>
-        <button type="button" class="news-next" aria-label="次へ"><span>&gt;</span></button>
+        <button type="button" class="news-prev" aria-label="前へ">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.86 15.01" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor"
+              d="M1.84,5.39c.63,1.34.63,2.89,0,4.24L.13,13.28c-.21.45-.13,1,.23,1.34.4.37.99.51,1.55.27l12.75-5.55c1.6-.7,1.6-2.97,0-3.67L1.91.12C1.28-.15.6.06.22.54-.05.86-.06,1.33.12,1.71l1.72,3.68Z"/>
+          </svg>
+        </button>
+
+        <button type="button" class="news-next" aria-label="次へ">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.86 15.01" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor"
+              d="M1.84,5.39c.63,1.34.63,2.89,0,4.24L.13,13.28c-.21.45-.13,1,.23,1.34.4.37.99.51,1.55.27l12.75-5.55c1.6-.7,1.6-2.97,0-3.67L1.91.12C1.28-.15.6.06.22.54-.05.86-.06,1.33.12,1.71l1.72,3.68Z"/>
+          </svg>
+        </button>
       </div>
     <?php else: ?>
       <p class="news-empty">現在お知らせはありません。</p>
