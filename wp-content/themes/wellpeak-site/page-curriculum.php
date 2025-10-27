@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<main id="カリキュラム" class="curriculum-page">
+<main id="curriculum" class="curriculum-page">
   <?php get_template_part("template-parts/company/intro"); ?>
   <?php get_template_part("template-parts/company/executives"); ?>
   <?php get_template_part("template-parts/company/profile"); ?>
