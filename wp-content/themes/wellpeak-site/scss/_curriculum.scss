@@ -1,0 +1,123 @@
+.curriculum-intro {
+    padding: var(--common-spacing) 0;
+
+    .intro-inner {
+        display: grid;
+        gap: $common-spacing;
+    }
+
+    .section-title {
+        text-align: left;
+    }
+
+    .intro-body {
+        font-size: $font-base;
+        line-height: $line-height-base;
+        color: $wellpeak-black;
+        display: grid;
+        gap: 0.9rem;
+    }
+}
+
+.ku-msg {
+    padding: var(--common-spacing) 0;
+
+    .ku-inner {
+        display: grid;
+        grid-template-columns: minmax(18rem, 1fr) 2fr;
+        grid-template-rows: auto 1fr;
+        gap: clamp(1rem, 3vw, 2rem);
+        align-items: start;
+
+        .ku-heading {
+            grid-column: 1 / -1;
+            margin: 0;
+            font-weight: 1000;
+            color: $wellpeak-brown;
+            font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+            text-align: left;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: clamp(6rem, 20vw, 10rem);
+                height: 0.3rem;
+                background: $wellpeak-yellow;
+                border-radius: 999px;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .ku-left {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        gap: $common-spacing;
+    }
+
+    .ku-avatar {
+        display: grid;
+        justify-items: center;
+        gap: 0.6rem;
+
+        img {
+            width: clamp(180px, 28vw, 260px);
+            aspect-ratio: 1 / 1;
+            border-radius: 999px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ku-meta {
+            display: grid;
+            gap: 0.2rem;
+            font-size: $font-sm;
+            color: $wellpeak-brown;
+            .ku-titleline {
+                opacity: 0.9;
+            }
+            .ku-name {
+                font-weight: 900;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+
+    .ku-right {
+        display: grid;
+        gap: $common-spacing;
+        color: $wellpeak-black;
+        font-size: $font-base;
+        line-height: $line-height-base;
+        align-self: center;
+        p {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .ku-inner {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+        }
+
+        .ku-left {
+            justify-items: center;
+            text-align: center;
+        }
+        .ku-right {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.curriculum-course {
+    padding: $common-spacing;
+    background: linear-gradient(
+        90deg,
+        rgba(245, 212, 60, 0.08),
+        transparent 55%
+    );
+}
