@@ -3,6 +3,8 @@
 @import "footer";
 @import "front-page";
 @import "cta";
+@import "company";
+@import "curriculum";
 
 /* global layouts -- I should have set more global here, might refactor front-page afterwards.*/
 html,
@@ -26,7 +28,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     padding: 0;
     box-sizing: border-box;
 }
@@ -52,7 +54,11 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: $wellpeak-brown;
+    background: radial-gradient(
+        closest-corner circle at 10% 15%,
+        #9d7d59 0%,
+        #70574b 125%
+    );
     color: white;
     height: 30vh;
     overflow: hidden;
@@ -106,4 +112,18 @@ main {
     .page-banner__media {
         flex: 0 0 60%;
     }
+}
+
+/* General headings */
+
+.section-heading {
+    font-size: $font-heading-lg;
+    font-weight: 800;
+    color: $wellpeak-brown;
+    margin-bottom: 0.75rem;
+}
+.text {
+    color: $wellpeak-black;
+    font-size: $font-base;
+    line-height: $line-height-base;
 }

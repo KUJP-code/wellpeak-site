@@ -134,7 +134,7 @@
 }
 
 .section-title {
-    font-size: clamp(1.5rem, 2vw, 2.25rem);
+    font-size: $font-heading-lg;
     font-weight: 800;
     color: $wellpeak-brown;
     margin-bottom: 0.75rem;
