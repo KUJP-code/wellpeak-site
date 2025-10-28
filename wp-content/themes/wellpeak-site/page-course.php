@@ -10,9 +10,10 @@ get_header(); ?>
         "title" => get_the_title(),
         "image" => get_stylesheet_directory_uri() . "/images/hero-splash.jpg",
     ]); ?>
-  <?php get_template_part("template-parts/company/intro"); ?>
-  <?php get_template_part("template-parts/company/executives"); ?>
-  <?php get_template_part("template-parts/company/profile"); ?>
+  <?php get_template_part("template-parts/course/intro"); ?>
+  <?php get_template_part("template-parts/course/beginner"); ?>
+  <?php get_template_part("template-parts/cta"); ?>
+  <?php get_template_part("template-parts/course/expert"); ?>
 </main>
 
 <?php get_footer();
