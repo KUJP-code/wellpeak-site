@@ -1,0 +1,83 @@
+.school-row {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.25rem;
+    align-items: stretch;
+    background: linear-gradient(
+        135deg,
+        rgba(112, 87, 75, 0.08),
+        rgba(245, 212, 60, 0.08)
+    );
+    margin: $common-spacing;
+    padding: $common-spacing;
+    border-radius: $common-radius;
+}
+.school-row__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.school-row__title {
+    font-weight: 900;
+    color: $wellpeak-brown;
+    font-size: $font-heading-md;
+}
+.school-row__address div {
+    line-height: $line-height-base;
+    color: $wellpeak-black;
+}
+.school-row__right {
+    display: flex;
+}
+.school-row__media {
+    aspect-ratio: 16/9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: $common-radius;
+}
+.school-row-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.school-row-thumb--placeholder {
+    background: #eee;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .school-row {
+        grid-template-columns: 1fr;
+
+        padding: 0;
+        margin: $common-spacing, 0;
+    }
+    .school-row__right {
+        order: 1;
+    }
+    .school-row__left {
+        order: 2;
+    }
+    .school-row__title {
+        text-align: center;
+    }
+    .school-row__address,
+    .school-row__cta {
+        padding-left: $common-spacing;
+    }
+}
+
+/* Button: reuse .btn-more, but add smaller stuff */
+.btn-more--sm {
+    padding: 0.5rem 1rem;
+    font-size: $font-lg;
+    border-width: 3px;
+    gap: $common-spacing;
+
+    &::after {
+        width: 0.85em;
+        height: 0.85em;
+        transform: translateY(1px);
+    }
+}
