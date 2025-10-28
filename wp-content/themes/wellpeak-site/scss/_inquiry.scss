@@ -1,0 +1,151 @@
+/* Inquiry form */
+.inquiry {
+    padding: var(--common-spacing) 0;
+
+    .inquiry-inner {
+        width: calc(100% - 4rem);
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .inquiry-form {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        align-items: stretch;
+        background: #fff;
+        border-radius: var(--common-radius);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .form-pane {
+        padding: 2rem;
+
+        .field {
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 700;
+            color: $wellpeak-brown;
+        }
+
+        .req {
+            color: $wellpeak-yellow;
+            font-weight: 900;
+            margin-left: 0.25em;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            box-sizing: border-box;
+            min-width: 0;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            border-radius: 0.85rem;
+            font-size: 1rem;
+            outline: none;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+            background: #fff;
+
+            &:focus {
+                border-color: $wellpeak-yellow;
+                box-shadow: 0 0 0 3px rgba(245, 212, 60, 0.25);
+            }
+            &[aria-invalid="true"] {
+                border-color: #d9534f;
+                box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.15);
+            }
+        }
+
+        .error {
+            min-height: 1.2em;
+            font-size: 0.9rem;
+            color: #d9534f;
+            margin-top: 0.25rem;
+        }
+
+        .consent {
+            margin: 1rem 0;
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+
+                input[type="checkbox"] {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    accent-color: $wellpeak-yellow;
+                }
+            }
+
+            a {
+                color: $wellpeak-yellow;
+                text-decoration: underline;
+            }
+        }
+
+        .actions {
+            margin-top: 1.25rem;
+
+            .btn-submit {
+                display: inline-flex;
+                font-size: $font-base;
+                align-items: center;
+                justify-content: center;
+                gap: 0.6rem;
+                padding: 0.8rem 2rem;
+                border-radius: var(--common-radius);
+                border: 4px solid $wellpeak-brown;
+                background: transparent;
+                color: $wellpeak-brown;
+                font-weight: 900;
+                cursor: pointer;
+                transition: all 0.25s ease;
+
+                &:hover {
+                    background: $wellpeak-brown;
+                    color: #fff;
+                }
+            }
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            font-weight: 700;
+            color: $wellpeak-brown;
+        }
+    }
+
+    .image-pane {
+        position: relative;
+        min-height: 420px;
+        background: #f7f5f3;
+
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 991px) {
+            min-height: 260px;
+        }
+    }
+}
