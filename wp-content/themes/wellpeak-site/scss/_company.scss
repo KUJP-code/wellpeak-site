@@ -144,3 +144,22 @@
         }
     }
 }
+/* Map embed styling */
+
+.executives {
+    .map-embed {
+        width: 100%;
+        max-width: 1200px; // keeps it from stretching too far on ultrawide monitors (for you mike)
+        margin: var(--common-spacing) auto 0;
+        border-radius: var(--common-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: clamp(280px, 40vw, 480px);
+            border: 0;
+        }
+    }
+}
