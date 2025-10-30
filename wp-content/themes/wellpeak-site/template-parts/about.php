@@ -65,7 +65,7 @@
         </div>
 
         <p class="points-button">
-          <a href="#" class="btn-more">さらに詳しく   </a>
+          <a href="/features" class="btn-more">さらに詳しく   </a>
         </p>
       </div>
 
@@ -104,7 +104,7 @@
             場でありながら、子どもたちが将来グローバル社会で輝くための確かな
             基礎力を築いていきます。
         </p>
-        <a href="#" class="btn-more">さらに詳しく</a>
+        <a href="/company" class="btn-more">さらに詳しく</a>
       </div>
       <div class="about-image ">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/section-2-image.jpg"
@@ -153,7 +153,7 @@
             果、中学進学後には学校の英語授業に頼らなくても十分に対応できる
             力を備え、自信を持って次のステージへ進むことができます。"
         </p>
-        <a href="#" class="btn-more">さらに詳しく</a>
+        <a href="/course" class="btn-more">さらに詳しく</a>
       </div>
       <div class="about-image">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/section-3-image.jpg"

@@ -1,4 +1,5 @@
-<section class="cta">
+<?php $extra = $args["extra_class"] ?? ""; ?>
+<section class="cta <?php echo esc_attr($extra); ?>">
   <div class="cta-wrapper">
     <div class="container cta-inner">
       <div class="cta-content">
@@ -8,7 +9,7 @@
           応用言語学博士が監修！最新カリキュラムで<br />
           英語が聴ける・話せる・楽しめる！
         </p>
-        <a class="btn btn-primary cta-btn" href="/trial">無料体験に参加する</a>
+        <a class="btn btn-primary cta-btn" href="/setsumeikai">無料体験に参加する</a>
       </div>
     </div>
 

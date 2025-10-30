@@ -12,15 +12,14 @@
         position: relative;
         overflow: hidden;
         border-radius: var(--common-radius);
+        height: clamp(360px, 55vh, 720px);
     }
 
     .intro-image img {
         position: absolute;
-        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 50% 50%;
         display: block;
     }
 
@@ -29,7 +28,9 @@
             grid-template-columns: 1fr;
         }
         .intro-image {
-            height: clamp(220px, 70vh, 480px);
+            height: clamp(220px, 60vh, 480px);
+            aspect-ratio: 4 / 5;
+            margin-inline: auto;
         }
     }
 }

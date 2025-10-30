@@ -91,8 +91,7 @@
         return;
       }
 
-      if (status) status.textContent = "送信しました。ありがとうございました。";
-      form.reset();
+      window.location.href = "/thank-you/";
     } catch (err) {
       if (status)
         status.textContent =

@@ -9,9 +9,9 @@ if (!defined("ABSPATH")) {
 get_header();
 
 get_template_part("template-parts/page-banner", null, [
-    "title" => get_the_title(),
+    "title" => get_the_title() . "フォーム",
     "image" => esc_url(
-        get_stylesheet_directory_uri() . "/images/section-2-image.jpg",
+        get_stylesheet_directory_uri() . "/images/contact-side-image.jpg",
     ),
 ]);
 ?>

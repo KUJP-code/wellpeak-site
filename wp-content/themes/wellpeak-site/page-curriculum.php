@@ -8,7 +8,7 @@ get_header(); ?>
 <main id="curriculum" class="curriculum-page">
 <?php get_template_part("template-parts/page-banner", null, [
     "title" => get_the_title(),
-    "image" => get_stylesheet_directory_uri() . "/images/hero-splash.jpg",
+    "image" => get_stylesheet_directory_uri() . "/images/curriculum-hero.jpg",
 ]); ?>
   <?php get_template_part("template-parts/curriculum/intro"); ?>
   <?php get_template_part("template-parts/curriculum/about"); ?>

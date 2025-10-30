@@ -272,9 +272,9 @@ add_shortcode("inquiry_form", function ($atts) {
             </div>
 
             <div class="consent">
-              <p>「<a href="<?php echo esc_url(
+              <p><a href="<?php echo esc_url(
                   $atts["privacy_url"],
-              ); ?>" target="_blank" rel="noopener">プライバシーポリシー</a>」をご確認頂き、ご同意の上で送信を行ってください。</p>
+              ); ?>" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認いただき、ご同意の上で送信ください。</p>
               <label class="checkbox">
                 <input type="checkbox" id="consent" name="consent" required>
                 <span>個人情報保護方針に同意する <span class="req">*</span></span>

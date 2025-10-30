@@ -22,7 +22,7 @@
      </p>
        </div>
        <div class="intro-image">
-         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/section-2-image.jpg" alt="Company Image">
+         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wellpeak-building.jpeg" alt="Company Image">
        </div>
    </div>
  </section>

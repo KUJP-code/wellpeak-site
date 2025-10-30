@@ -159,6 +159,9 @@
         pointer-events: none;
     }
 }
+.cta-bottom {
+    margin-bottom: 0;
+}
 @media (max-width: 1024px) {
     .cta-wrapper {
         min-height: 350px;

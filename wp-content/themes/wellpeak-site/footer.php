@@ -31,7 +31,7 @@
 </div>
 
 <div class="footer-page-contents">
-    <div class="footer-cta">無料体験のご案内</div>
+    <a href="/setsumeikai" class="footer-cta">無料体験のご案内</a>
 	<?php wp_nav_menu([
      "theme_location" => "footer-menu",
  ]); ?>
@@ -43,7 +43,7 @@
 
 	<div class="button-wrapper">
 
-	<a href="https://www.wellpeak-site/privacy_policy/" class="footer-lower-link-button">プライバシーポリシー</a>
+	<a href="/privacy_policy" class="footer-lower-link-button">プライバシーポリシー</a>
 
 </div>
 

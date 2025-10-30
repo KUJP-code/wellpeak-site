@@ -5,10 +5,8 @@
 ?>
 <section class="curriculum-intro">
   <div class="container intro-inner">
-    <h2 class="section-title">コース情報</h2>
-    <div class="text">
-      <p>WELLPEAKでは、
-      お子様のレベルや目標に合わせた多様なコースをご用意しています。</p>
+    <div class="text mini-title">
+WELLPEAKでは、お子様一人ひとりの年代や英語レベル、目的に合わせて選べるよう、3種類のコースをご用意しています。
     </div>
   </div>
 </section>

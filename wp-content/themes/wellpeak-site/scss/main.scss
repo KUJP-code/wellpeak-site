@@ -7,6 +7,8 @@
 @import "curriculum";
 @import "setsumeikai";
 @import "inquiry";
+@import "news";
+@import "features";
 
 /* global layouts -- I should have set more global here, might refactor front-page afterwards.*/
 html,
@@ -62,7 +64,7 @@ main {
         #70574b 125%
     );
     color: white;
-    height: 30vh;
+    height: 45vh;
     overflow: hidden;
     mask-image: linear-gradient(to bottom, black 99%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 99%, transparent 100%);
@@ -103,13 +105,13 @@ main {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 55% center;
+        object-position: 55% 35%;
         display: block;
     }
 }
 @media (max-width: 768px) {
     .page-banner {
-        height: 20vh;
+        height: 25vh;
     }
     .page-banner__media {
         flex: 0 0 60%;
@@ -128,4 +130,110 @@ main {
     color: $wellpeak-black;
     font-size: $font-base;
     line-height: $line-height-base;
+}
+.mini-title {
+    font-size: $font-heading-md;
+    color: $wellpeak-brown;
+    text-align: center;
+    font-weight: 700;
+}
+/* FAQ extras */
+
+.faq-link {
+    color: $wellpeak-brown;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $wellpeak-yellow;
+        text-decoration: none;
+    }
+}
+.faq-footer-cta {
+    margin-top: var(--common-spacing);
+    padding-top: var(--common-spacing);
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-size: $font-base;
+    color: $wellpeak-brown;
+    line-height: 1.6;
+
+    .faq-link {
+        display: inline-block;
+        color: $wellpeak-brown;
+        font-weight: 700;
+        text-decoration: underline;
+        margin-top: 0.5rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $wellpeak-yellow;
+            text-decoration: none;
+        }
+    }
+}
+
+/*  Extra thank you page stuff */
+
+.thank-you-page {
+    .thank-you-section {
+        position: relative;
+        padding: var(--common-spacing) 0;
+        text-align: center;
+        overflow: hidden;
+        background: linear-gradient(
+            135deg,
+            rgba($wellpeak-yellow, 0.15),
+            rgba(255, 255, 255, 0.9)
+        );
+
+        .thank-you-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .thank-you-content {
+            background: white;
+            display: inline-block;
+            padding: 3rem 2rem;
+            border-radius: var(--common-radius);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .thank-you-title {
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            font-weight: 700;
+            color: $wellpeak-brown;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-message {
+            font-size: $font-base;
+            color: $wellpeak-black;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-deco {
+            position: absolute;
+            inset: 0;
+            border-radius: $common-radius;
+            background:
+                radial-gradient(
+                    circle at 50% 120%,
+                    rgba($wellpeak-yellow, 0.25),
+                    transparent 60%
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba($wellpeak-yellow, 0.15),
+                    transparent 55%
+                );
+            z-index: 1;
+            pointer-events: none;
+        }
+    }
 }
