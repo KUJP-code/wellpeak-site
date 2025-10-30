@@ -11,16 +11,17 @@ get_header();
   ]); ?>
 
   <section class="page-content" style="text-align:center; padding: 3rem 1rem;">
-    <h2>404 ページが見つかりません</h2>
+    <h2>404　～ページが見つかりません～</h2>
     <p>
       お探しのページは見つかりませんでした。<br>
-      移動または削除されたか、URLが間違っている可能性があります。
+          該当のページは、移動または削除、またはURLが間違っている可能性があります。
+
     </p>
     <p>
       <a href="<?php echo esc_url(home_url("/")); ?>" class="btn">
-        ホームページに戻る
+        トップページに戻るか、
       </a>
-      またはメニューから目的のページをお探しください。
+        メニューから目的のページをお探しください。
     </p>
   </section>
 </main>
