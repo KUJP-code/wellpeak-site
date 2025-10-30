@@ -1,22 +1,20 @@
 <section class="ku-msg">
   <div class="container ku-inner">
-    <h3 class="ku-heading">監修者より</h3>
+    <h3 class="ku-heading">確かな成果を約束するカリキュラム</h3>
 
     <div class="ku-left">
       <figure class="ku-avatar">
         <img src="<?php echo esc_url(
-            get_stylesheet_directory_uri() . "/images/section-2-image.jpg",
+            get_stylesheet_directory_uri() . "/images/kids-up-logo.png",
         ); ?>" alt="監修者の写真" />
-        <figcaption class="ku-meta">
-          <span class="ku-titleline">応用言語学博士（学習院女子大学 教授）</span>
-          <span class="ku-name">萓 忠義</span>
-        </figcaption>
+
       </figure>
     </div>
 
     <div class="ku-right">
-      <p>Kids UPのプログラムは、お子様の英語習得・学習を最大限に促進できる環境を整えたスクールです。単に英語で学童保育を行う他のスクールとは異なり、その教育理念はさまざまな点で優れています。</p>
-      <p>お子様の英語学習を直接サポートする講師陣は、英語指導に関する専門的な知識と経験を兼ね備えており、厳しい基準で採用されています。英語教育の根幹であるカリキュラムに関しては、応用言語学、脳科学、心理学などの科学的理論に基づいて作成されており、お子様が効率よく効果的に学習できるようになっています。</p>
+      <p>WELLPEAKでは、関東に複数教室を展開する学童保育型英会話スクールKids UPが独自開発した「カリキュラム」「テキスト」を使用しています。</p>
+      <p>応用言語学をベースに作成された効率的に英語を身に着けることが出来る最先端のカリキュラムです。</p>
+      <p>※応用言語学博士である学習院女子大学の萓忠義教授が監修</p>
     </div>
   </div>
 </section>
