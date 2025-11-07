@@ -1,6 +1,6 @@
 <section class="hero-full">
   <div class="container">
-    <div class="hero-message" aria-label="スローガン">人間力を育てる</div>
+
     <?php echo do_shortcode('[smartslider3 slider="2"]'); ?>
 
   </div>

@@ -8,43 +8,12 @@
 .hero-full {
     position: relative;
 
-    .hero-message {
-        position: absolute;
-        top: var(--common-spacing);
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-        pointer-events: none;
-
-        font-weight: 700;
-        font-size: clamp(1rem, 2vw, 1.75rem);
-        color: $wellpeak-brown;
-        letter-spacing: 0.05em;
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(2px);
-        padding: 0.2em 0.5em;
-        border-radius: var(--common-radius);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    }
-
     .n2-ss-slider {
         border-radius: var(--common-radius);
         overflow: hidden;
     }
 }
-.hero-message {
-    animation: heroFloat 6s ease-in-out infinite alternate;
-}
 
-@keyframes heroFloat {
-    0% {
-        transform: translate(-50%, 0);
-    }
-    100% {
-        transform: translate(-50%, -6px);
-    }
-}
 @media (max-width: 767.98px) {
     .hero-full .n2-ss-slider {
         aspect-ratio: 6 / 5;

@@ -49,7 +49,7 @@
 
 	</div>
 
-	<small class="copyright"><script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear ();document.write(myYear);</script> WELLPEAK All Rights Reserved.</small>
+	<small class="copyright"> © <script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear ();document.write(myYear);</script> WELLPEAK All Rights Reserved.</small>
 
 
 	</div>
