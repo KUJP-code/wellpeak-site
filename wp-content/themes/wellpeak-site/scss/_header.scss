@@ -266,7 +266,10 @@
     }
 }
 @media (max-width: 1199.98px) {
+    .site-header .nav .menu {
+        gap: 0.8rem;
+    }
     .site-header .nav .menu a {
-        font-size: $font-base;
+        font-size: $font-sm;
     }
 }
