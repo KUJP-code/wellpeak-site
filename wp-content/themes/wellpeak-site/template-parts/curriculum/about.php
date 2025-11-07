@@ -18,7 +18,7 @@
       </div>
 
       <div class="about-image">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/curriculum-side.png" alt="Learn with Fun イメージ" loading="lazy" decoding="async">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/smiley-kid-image.jpg" alt="Learn with Fun イメージ" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="about-image">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/fun-learning.jpg" alt="Learn with Fun イメージ" loading="lazy" decoding="async">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/curriculum-side.png" alt="Learn with Fun イメージ" loading="lazy" decoding="async">
         </div>
       </div>
     </div>

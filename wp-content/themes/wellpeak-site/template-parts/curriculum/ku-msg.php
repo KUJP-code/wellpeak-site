@@ -1,6 +1,6 @@
 <section class="ku-msg">
   <div class="container ku-inner">
-    <h3 class="ku-heading">確かな成果を約束するカリキュラム</h3>
+    <h3 class="ku-heading section-title">確かな成果を約束するカリキュラム</h3>
 
     <div class="ku-left">
       <figure class="ku-avatar">

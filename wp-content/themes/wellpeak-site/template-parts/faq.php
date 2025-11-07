@@ -54,6 +54,10 @@
       <?php
       endforeach;
       ?>
+      <p class="points-button">
+        <a href="/faq" class="btn-more">さらに詳しく   </a>
+      </p>
     </div>
+
   </div>
 </section>
