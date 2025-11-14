@@ -40,7 +40,6 @@ add_action("init", function () {
     ]);
 });
 
-// Field in general for notifications email
 add_action("admin_init", function () {
     add_option("wellpeak_inquiry_email", get_option("admin_email"));
 

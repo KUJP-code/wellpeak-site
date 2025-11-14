@@ -45,9 +45,6 @@ function wellpeak_get_schools_list()
     ];
 }
 
-/** --------------------------
- *  CPT for storing inquiries
- * -------------------------- */
 add_action("init", function () {
     if (post_type_exists("inquiry")) {
         return;
@@ -63,9 +60,6 @@ add_action("init", function () {
     ]);
 });
 
-/** --------------------------
- *  AJAX handler (GLOBAL)
- * -------------------------- */
 add_action("wp_ajax_nopriv_wellpeak_submit_inquiry", "wellpeak_handle_inquiry");
 add_action("wp_ajax_wellpeak_submit_inquiry", "wellpeak_handle_inquiry");
 
@@ -164,16 +158,19 @@ function wellpeak_handle_inquiry()
         admin_url("post.php?post={$post_id}&action=edit");
 
     $headers = [];
+    $from_email =
+        "no-reply@" . preg_replace("/^www\./", "", $_SERVER["SERVER_NAME"]);
+    $headers[] = "From: Wellpeak Kids English School <" . $from_email . ">";
     if ($email) {
         $headers[] = "Reply-To: " . $gname . " <" . $email . ">";
     }
 
-    @wp_mail($to, $subj, $body, $headers);
+    wp_mail($to, $subj, $body, $headers);
 
     if ($email) {
         $auto_subj = "お問い合わせありがとうございます";
         $auto_body = "{$gname} 様\n\nお問い合わせありがとうございます。担当者より折り返しご連絡いたします。\n\n送信内容の控え：\n\n{$body}";
-        @wp_mail($email, $auto_subj, $auto_body);
+        wp_mail($email, $auto_subj, $auto_body, $headers);
     }
 
     wp_send_json_success([
