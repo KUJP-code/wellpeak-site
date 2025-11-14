@@ -3,9 +3,6 @@ if (!defined("ABSPATH")) {
     exit();
 }
 
-/** --------------------------
- *  Helper: schools list
- * -------------------------- */
 function wellpeak_get_schools_list()
 {
     if (function_exists("wellpeak_get_schools")) {
@@ -148,8 +145,8 @@ function wellpeak_handle_inquiry()
         wp_send_json_error(["message" => "保存に失敗しました。"], 500);
     }
 
-    // Email
-    $to = get_option("admin_email"); // change to client address if needed
+    $to = get_option("wellpeak_inquiry_email", get_option("admin_email"));
+
     $subj = "【お問い合わせ】" . $gname . " - " . $school;
     $body =
         "お問い合わせが届きました。\n\n" .
@@ -185,9 +182,6 @@ function wellpeak_handle_inquiry()
     ]);
 }
 
-/** --------------------------
- *  Shortcode (renders form and boots JS)
- * -------------------------- */
 add_shortcode("inquiry_form", function ($atts) {
     $atts = shortcode_atts(
         [

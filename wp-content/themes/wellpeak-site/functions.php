@@ -40,6 +40,30 @@ add_action("init", function () {
     ]);
 });
 
+// Field in general for notifications email
+add_action("admin_init", function () {
+    add_option("wellpeak_inquiry_email", get_option("admin_email"));
+
+    register_setting("general", "wellpeak_inquiry_email", [
+        "type" => "string",
+        "sanitize_callback" => "sanitize_email",
+        "default" => get_option("admin_email"),
+    ]);
+
+    add_settings_field(
+        "wellpeak_inquiry_email",
+        "Inquiry Notification Email",
+        function () {
+            $value = esc_attr(
+                get_option("wellpeak_inquiry_email", get_option("admin_email")),
+            );
+            echo "<input type='email' name='wellpeak_inquiry_email' value='{$value}' class='regular-text' />";
+            echo "<p class='description'>このメールアドレス宛にお問い合わせ通知が送信されます。</p>";
+        },
+        "general",
+    );
+});
+
 add_action("init", function () {
     register_post_type("policy", [
         "label" => "Policies",
